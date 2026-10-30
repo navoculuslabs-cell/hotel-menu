@@ -1,0 +1,134 @@
+
+.menu-page[data-theme="classic"] {
+    background: #244B3B;
+    color: #202820;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-container {
+    background: #F7F2E8;
+    border: 1px solid #B49A63;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-header {
+    border-bottom: 1px solid #B49A63;
+    padding-bottom: 25px;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-eyebrow,
+  .menu-page[data-theme="classic"] .menu-subtitle,
+  .menu-page[data-theme="classic"] .menu-footer-message {
+    color: #A08448;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-hotel-name,
+  .menu-page[data-theme="classic"] .category-tab,
+  .menu-page[data-theme="classic"] .menu-item-title h3,
+  .menu-page[data-theme="classic"] .menu-item-price {
+    font-family: Georgia, serif;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-hotel-name {
+    margin-top: 12px;
+    color: #244B3B;
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-tagline {
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-subtitle {
+    margin-top: 15px;
+    letter-spacing: 0.2em;
+  }
+  
+  .menu-page[data-theme="classic"] .filter-label {
+    color: #666;
+    font-size: 12px;
+  }
+  
+  .menu-page[data-theme="classic"] .veg-toggle {
+    color: #244B3B;
+    border-color: #B49A63;
+  }
+  
+  .menu-page[data-theme="classic"] .toggle-track {
+    background: #D5D0C4;
+  }
+  
+  .menu-page[data-theme="classic"] .toggle-thumb {
+    background: white;
+  }
+  
+  .menu-page[data-theme="classic"] .veg-toggle.active .toggle-track {
+    background: #244B3B;
+  }
+  
+  .menu-page[data-theme="classic"] .category-tab {
+    background: transparent;
+    color: #244B3B;
+    border-color: #D8CCB4;
+    font-size: 13px;
+  }
+  
+  .menu-page[data-theme="classic"] .category-tab.active {
+    background: #244B3B;
+    color: white;
+    border-color: #244B3B;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-item {
+    border-bottom: 1px solid #E8DFCE;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-item-title h3 {
+    color: #202820;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-item-description {
+    color: #777;
+    font-size: 12px;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-item-price {
+    color: #244B3B;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .menu-page[data-theme="classic"] .food-indicator.veg {
+    color: #188044;
+  }
+  
+  .menu-page[data-theme="classic"] .food-indicator.veg span {
+    background: #188044;
+  }
+  
+  .menu-page[data-theme="classic"] .food-indicator.non-veg {
+    color: #C0392B;
+  }
+  
+  .menu-page[data-theme="classic"] .food-indicator.non-veg span {
+    background: #C0392B;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-footer {
+    border-top: 1px solid #B49A63;
+    color: #666;
+    font-size: 12px;
+  }
+  
+  .menu-page[data-theme="classic"] .menu-empty {
+    color: #777;
+  }
+  

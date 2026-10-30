@@ -1,0 +1,4 @@
+id,name,phone,address,menuType,excelFile
+1,The Spice House,9876543210,"FC Road, Pune, Maharashtra",classic,hotel-1-menu.xlsx
+2,Green Leaf Cafe,9876543211,"Baner, Pune, Maharashtra",classic,hotel-2-menu.xlsx
+3,Urban Kitchen,9876543212,"Hinjawadi, Pune, Maharashtra",classic,hotel-3-menu.xlsx

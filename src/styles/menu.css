@@ -1,0 +1,238 @@
+
+.menu-page {
+    min-height: 100vh;
+    padding: 20px 12px;
+  }
+  
+  .menu-container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
+  
+  .menu-header {
+    text-align: center;
+  }
+  
+  .menu-eyebrow,
+  .menu-subtitle,
+  .menu-footer-message {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  
+  .menu-hotel-name {
+    overflow-wrap: anywhere;
+  }
+  
+  .menu-tagline {
+    margin-top: 10px;
+  }
+  
+  .menu-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 26px 0 18px;
+  }
+  
+  .veg-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid currentColor;
+    border-radius: 30px;
+    padding: 8px 12px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  
+  .toggle-track {
+    width: 34px;
+    height: 19px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+  }
+  
+  .veg-toggle.active .toggle-thumb {
+    transform: translateX(15px);
+  }
+  
+  .menu-category-tabs {
+    display: flex;
+    gap: 9px;
+    overflow-x: auto;
+    padding: 8px 0 14px;
+    scrollbar-width: none;
+  }
+  
+  .menu-category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .category-tab {
+    flex: 0 0 auto;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 9px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .menu-items {
+    padding: 18px 0;
+  }
+  
+  .menu-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 17px 0;
+    align-items: start;
+  }
+  
+  .menu-item-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+  }
+  
+  .menu-item-title h3 {
+    overflow-wrap: anywhere;
+  }
+  
+  .menu-item-description {
+    margin: 5px 0 0 22px;
+    line-height: 1.5;
+  }
+  
+  .menu-item-price {
+    white-space: nowrap;
+  }
+  
+  .food-indicator {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    border: 1px solid currentColor;
+  }
+  
+  .food-indicator span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+  
+  .menu-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .menu-footer-message {
+    margin-top: 18px;
+  }
+  
+  .menu-empty {
+    padding: 40px 10px;
+    text-align: center;
+  }
+  
+  @media (max-width: 480px) {
+    .menu-page {
+      padding: 10px 8px;
+    }
+  
+    .menu-container {
+      padding: 20px 15px;
+    }
+  
+    .menu-item {
+      padding: 14px 0;
+    }
+  }
+
+  /* Hide Google's default translation dropdown */
+.google-translate-container {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hide Google translation banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+  
+
+/* Hide Google Translate top banner */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Prevent page from shifting down */
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+/* Hide Google Translate floating tooltip */
+.goog-tooltip {
+  display: none !important;
+}
+
+/* Hide highlighted translation background */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Hide Google branding and default dropdown */
+#google_translate_element,
+.goog-te-gadget {
+  display: none !important;
+}
+
+/* Hide Google Translate iframe */
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Hide skiptranslate elements */
+.skiptranslate {
+  display: none !important;
+}
