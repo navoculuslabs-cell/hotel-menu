@@ -1,11 +1,11 @@
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import HotelMenuPage from "./components/HotelMenuPage";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
@@ -13,6 +13,6 @@ export default function App() {
           element={<HotelMenuPage />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
