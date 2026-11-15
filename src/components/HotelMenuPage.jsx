@@ -197,9 +197,6 @@ export default function HotelMenuPage() {
             transformHeader: (header) => header.trim(),
           });
           
-          if (result.errors.length > 0) {
-            throw new Error("The hotel registry CSV is invalid.");
-          }
           
           const hotels = result.data;
         const selectedHotel = hotels.find(

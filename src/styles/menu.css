@@ -236,3 +236,64 @@ iframe.goog-te-banner-frame {
 .skiptranslate {
   display: none !important;
 }
+
+
+
+.google-review-section {
+  text-align: center;
+  padding: 28px 16px;
+  margin-top: 24px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.google-review-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.google-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.google-star {
+  color: #e6a23c;
+  font-size: 22px;
+}
+
+.google-rating strong {
+  font-size: 18px;
+}
+
+.google-review-count {
+  font-size: 12px;
+  color: #777;
+}
+
+.google-review-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #244b3b;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.google-review-button:hover {
+  opacity: 0.9;
+}
+
+.google-review-note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 12px;
+}
+

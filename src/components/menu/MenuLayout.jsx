@@ -7,6 +7,7 @@ import MenuFilters from "./MenuFilters";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
 import GoogleTranslate from "./GoogleTranslate";
+import GoogleReviewSection from "./GoogleReviewSection";
 
 export default function MenuLayout({
   hotel,
@@ -115,6 +116,7 @@ export default function MenuLayout({
         </section>
 
         {/* Footer */}
+        <GoogleReviewSection hotel={hotel} />
         <footer className="menu-footer">
           {hotel?.address && (
             <p>{hotel.address}</p>
