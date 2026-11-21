@@ -9,11 +9,7 @@ export const REQUIRED_MENU_COLUMNS = [
   "price",
 ];
 
-const menuFiles = import.meta.glob("../data/menus/*.xlsx", {
-  query: "?url",
-  import: "default",
-  eager: true,
-});
+
 
 export function normalizeHeader(value) {
   return String(value ?? "")
@@ -51,7 +47,7 @@ export function parseHotelsCsv(csvText) {
   return result.data;
 }
 
-export function getMenuUrl(fileName) {
+function getMenuUrl(fileName, menuFiles) {
   const match = Object.entries(menuFiles).find(([path]) =>
     path.endsWith(`/${fileName}`)
   );
@@ -59,7 +55,9 @@ export function getMenuUrl(fileName) {
   return match?.[1];
 }
 
-export async function fetchExcelMenu(url) {
+ export async function fetchExcelMenu(fileName, menuFiles) {
+  const url = getMenuUrl(fileName, menuFiles);
+
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -68,13 +66,16 @@ export async function fetchExcelMenu(url) {
 
   const buffer = await response.arrayBuffer();
   const workbook = XLSX.read(buffer, { type: "array" });
+
   const firstSheetName = workbook.SheetNames[0];
 
   if (!firstSheetName) {
     throw new Error("The Excel file contains no worksheet.");
   }
 
-  const rows = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName], {
+  const worksheet = workbook.Sheets[firstSheetName];
+
+  const rows = XLSX.utils.sheet_to_json(worksheet, {
     header: 1,
     defval: "",
     raw: true,
@@ -86,7 +87,15 @@ export async function fetchExcelMenu(url) {
 
   const headers = rows[0].map(normalizeHeader);
 
-  const missingColumns = REQUIRED_MENU_COLUMNS.filter(
+  const requiredColumns = [
+    "name",
+    "description",
+    "veg/non-veg",
+    "category",
+    "price",
+  ];
+
+  const missingColumns = requiredColumns.filter(
     (column) => !headers.includes(column)
   );
 
@@ -97,19 +106,33 @@ export async function fetchExcelMenu(url) {
   }
 
   const indexes = Object.fromEntries(
-    REQUIRED_MENU_COLUMNS.map((column) => [column, headers.indexOf(column)])
+    requiredColumns.map((column) => [
+      column,
+      headers.indexOf(column),
+    ])
   );
 
-  const menuItems = rows
-    .slice(1)
+  const menuItems = rows.slice(1)
     .filter((row) =>
       row.some((cell) => String(cell ?? "").trim() !== "")
     )
     .map((row, index) => {
-      const name = String(row[indexes.name] ?? "").trim();
-      const description = String(row[indexes.description] ?? "").trim();
-      const category = String(row[indexes.category] ?? "").trim();
-      const vegNonVeg = normalizeFoodType(row[indexes["veg/non-veg"]]);
+      const name = String(
+        row[indexes.name] ?? ""
+      ).trim();
+
+      const description = String(
+        row[indexes.description] ?? ""
+      ).trim();
+
+      const category = String(
+        row[indexes.category] ?? ""
+      ).trim();
+
+      const vegNonVeg = normalizeFoodType(
+        row[indexes["veg/non-veg"]]
+      );
+
       const rawPrice = row[indexes.price];
       const price =
         typeof rawPrice === "number"
@@ -124,10 +147,18 @@ export async function fetchExcelMenu(url) {
         !Number.isFinite(price) ||
         price < 0
       ) {
-        throw new Error(`Invalid menu data near Excel row ${index + 2}.`);
+        throw new Error(
+          `Invalid menu data near Excel row ${index + 2}.`
+        );
       }
 
-      return { name, description, vegNonVeg, category, price };
+      return {
+        name,
+        description,
+        vegNonVeg,
+        category,
+        price,
+      };
     });
 
   if (menuItems.length === 0) {

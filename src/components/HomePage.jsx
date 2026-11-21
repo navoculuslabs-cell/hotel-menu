@@ -1,11 +1,11 @@
 
 import { useState } from "react";
-import HotelDetailsForm from "./HotelDetailsForm";
-import ExcelUpload from "./ExcelUpload";
-import Header from "./Header";
-import Stepper from "./Stepper";
-import ThemeSelection from "./ThemeSelection";
-import ReviewMenuSetup from "./ReviewMenuSetup";    
+import HotelDetailsForm from "./form/HotelDetailsForm";
+import ExcelUpload from "./form/ExcelUpload";
+import Header from "./form/Header";
+import Stepper from "./form/Stepper";
+import ThemeSelection from "./form/ThemeSelection";
+import ReviewMenuSetup from "./form/ReviewMenuSetup";    
 
 
 export default function HomePage() {
